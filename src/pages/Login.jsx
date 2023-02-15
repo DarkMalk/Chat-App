@@ -1,41 +1,40 @@
-import { useDispatch } from 'react-redux'
-import { actionAuthLogin } from '../store/authReducer'
 import { supabaseClient } from '../App'
-import { AuthForm } from '../components/AuthForm'
+import { ContainerAuth } from '../components/ContainerAuth'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 
 export const Login = () => {
-  const dispatch = useDispatch()
+  const { setLoginAuth } = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async event => {
     event.preventDefault()
-    const [email, password] = event.target
+    const [{ value: email }, { value: password }] = event.target
 
-    try {
-      const {
-        data: { user }
-      } = await supabaseClient.auth.signInWithPassword({
-        email: email.value,
-        password: password.value
-      })
+    const credentialsLogin = { email, password }
 
-      if (user) {
-        dispatch(actionAuthLogin(user))
-        navigate('/')
-      }
-    } catch (e) {
-      return console.error(e)
+    const {
+      data: { user },
+      error
+    } = await supabaseClient.auth.signInWithPassword(credentialsLogin)
+
+    if (user) {
+      setLoginAuth(user)
+      navigate('/')
+    }
+
+    if (error) {
+      alert(error.message)
     }
   }
 
   return (
-    <AuthForm title='Login' classContainerChildren='container-form-auth-login'>
+    <ContainerAuth title='Login'>
       <form onSubmit={handleSubmit}>
         <input type='email' placeholder='Email' required />
         <input type='password' placeholder='Password' required />
         <button>Login</button>
       </form>
-    </AuthForm>
+    </ContainerAuth>
   )
 }
