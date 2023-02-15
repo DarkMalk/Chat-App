@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 24 24" id="sign-in-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line">
+	<polyline id="primary" points="10 15 7 12 10 9" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+	</polyline>
+	<line id="primary-2" data-name="primary" x1="7" y1="12" x2="21" y2="12" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+	</line>
+	<path id="primary-3" data-name="primary" d="M14,16v3a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V5A1,1,0,0,1,4,4h9a1,1,0,0,1,1,1V8" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+	</path>
+</svg>
