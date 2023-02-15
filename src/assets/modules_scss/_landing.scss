@@ -1,0 +1,69 @@
+.container-landing {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow: auto;
+  gap: 10px;
+  img {
+    width: 500px;
+    height: 350px;
+  }
+}
+
+.landing-items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.button-landing {
+  width: 240px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+  background-color: $Naval;
+  border: 2px solid black;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.button-landing:hover {
+  filter: brightness(95%);
+}
+
+@media (max-width: 768px) {
+  .container-landing {
+    display: grid;
+    place-items: center;
+    place-content: center;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .container-landing {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+}

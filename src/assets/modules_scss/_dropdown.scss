@@ -1,0 +1,78 @@
+.dropdownComponent {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.btn-dropdown {
+  position: absolute;
+  width: 100%;
+  height: 48px;
+  z-index: 2;
+  border: 1px solid transparent;
+  background-color: $gray-secondary;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 1em;
+  border-radius: 4px;
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+.btn-dropdown:hover {
+  border: 1px solid black;
+  filter: brightness(95%);
+}
+
+.btn-dropdown-open {
+  border-radius: 4px 4px 0 0;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $gray-secondary;
+  translate: 0 -48px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+  border-radius: 0 0 4px 4px;
+  button {
+    width: 100%;
+    height: 32px;
+    background-color: $gray-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  button:hover {
+    border: 1px solid black;
+    filter: brightness(95%);
+  }
+}
+
+.open {
+  opacity: 1;
+  translate: 0;
+} 
