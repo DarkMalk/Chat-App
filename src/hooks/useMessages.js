@@ -1,20 +1,19 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { getAllMessagesOfTheChat } from '../services/getAllMessagesOfTheChat'
-import { actionMessageCreated, actionMessageInit } from '../store/messagesReducer'
 
 export const useMessages = () => {
-  const dispatch = useDispatch()
-  const { chat, messages } = useSelector(state => state)
+  const { chat } = useSelector(state => state)
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
     if (chat) {
-      getAllMessagesOfTheChat(chat.id).then(messages => dispatch(actionMessageInit(messages)))
+      getAllMessagesOfTheChat(chat.id).then(allMessages => setMessages(allMessages.reverse()))
     }
   }, [chat?.id])
 
   return {
     messages,
-    setNewMessage: newMessage => dispatch(actionMessageCreated(newMessage))
+    setMessages
   }
 }
