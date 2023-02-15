@@ -8,7 +8,7 @@ export const useMessages = () => {
 
   useEffect(() => {
     if (chat) {
-      getAllMessagesOfTheChat(chat.id).then(allMessages => setMessages(allMessages.reverse()))
+      getAllMessagesOfTheChat(chat.id).then(allMessages => setMessages(allMessages))
     }
   }, [chat?.id])
 
